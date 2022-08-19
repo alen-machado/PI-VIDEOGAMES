@@ -1,0 +1,27 @@
+.conteiner{
+    background-color: gainsboro;
+    margin: 5px;
+    padding: 10px;
+    width: 500px;
+    height: 500px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+   
+}
+.otroDiv {
+    text-align: center;
+    color: white;
+    margin-left: 550px;
+}
+.title {
+    color: white;
+    margin-left:570px;
+}
+.select {
+    border: 3px solid rgb(49, 58, 105);
+    border-radius: 50px;
+}

@@ -1,0 +1,19 @@
+.div {
+    color:white ;
+   justify-content: center;
+   
+}
+.btn {
+    border: 10px solid white;
+    border-radius: 15px;
+    box-shadow: 10px 150px 150px 10px rgb(150, 142, 142);
+    cursor: pointer;
+}
+.btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+.title {
+    color:white
+  }

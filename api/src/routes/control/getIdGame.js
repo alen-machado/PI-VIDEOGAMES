@@ -14,28 +14,46 @@ const getIdGame = async (req, res, next) => {
    //  } else {
    //      res.json('id invalido')
    //  }
-   if(id){
+   if(!id.includes('-')){
+
       const apiUrl = await axios.get(
       `https://api.rawg.io/api/games/${id}?key=${API_KEY}`
     );
-      console.log(apiUrlData)
-    const apiData = apiUrl.data.map((v) => { 
+
+     
+    const apiData = await apiUrl.data
+
+    let game = [{
+      id: apiData.id,
+      name: apiData.name,
+      description: apiData.description,
+      image: apiData.background_image,
+      released: apiData.released,
+      rating: apiData.rating, 
+      genres: apiData.genres.map( d => d.name),
+      platforms: apiData.platforms.map( d => d.platform.name)
+  }]
              
-      return {   
-         id:v.id, 
-         name:v.name,
-         released: v.released,
-         rating: v.rating,
-         platforms: v.platforms.map(p => p.platform.name),
-         genres: v.genres.map((e) => e.name),
-         image: v.background_image
-      };
-      
-    });
+  game.length ?            //Si encuentra los resultados que pedi que me los devuelva y en caso de que no, una alerta
+  res.status(200).json(game) :
+  res.status(404).send('juego por ID no encontrado')
     
-    res.json(apiData) ; 
+    
    } else {
-      res.send(' ID invalido')
+      let gameFound = await Videogame.findByPk(id, {  //Utilizo un findByPk para traer desde la DB todas las ID de los videogames
+         include: [{
+             model: Genre,               //Y tambien quiero que me incluya el modelo de Genre y Platform con el atributo name que esta definico en mi modelo
+             attributes: ['name'],
+             through : {
+                 attributes: [],
+             },
+         }]
+     })
+     var arreglo = []
+     arreglo.push(gameFound)
+
+     res.status(200).json(arreglo)
+ 
    }
    
 

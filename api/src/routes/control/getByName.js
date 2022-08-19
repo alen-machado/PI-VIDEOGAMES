@@ -15,7 +15,7 @@ const getByName = async (req, res, next) => {
          if (game) {
             res.status(200).json(game)
          } else {
-            res.status(400).send('este juego no existe')
+            res.status(404).send('este juego no existe')
          }
         } else {
             res.status(200).json(games) 

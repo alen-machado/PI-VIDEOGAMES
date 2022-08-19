@@ -1,0 +1,23 @@
+.title {
+    font: bold 7.5vw/1.6 "Acme", sans-serif;
+    color: grey;
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-shadow: -1px -1px 0px grey;
+  }
+
+  .text {
+    background-color: gainsboro;
+    height: 1000%;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    
+  }
+  .text:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }

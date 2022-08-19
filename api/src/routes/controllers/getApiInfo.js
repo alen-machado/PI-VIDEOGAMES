@@ -19,7 +19,7 @@ const axios = require('axios');
                 released: v.released,
                 rating: v.rating,
                 platforms: v.platforms.map(p => p.platform.name),
-                genres: v.genres.map((e) => e.name),
+                genres: v.genres.map((e) => e.name).join(', '),
                 image: v.background_image
             }
         })

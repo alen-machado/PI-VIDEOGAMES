@@ -1,0 +1,70 @@
+.conteiner{
+    /* background-color: gainsboro; */
+    margin: 5px;
+    padding: 10px;
+    width: 370px;
+    height: 550px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    color: aliceblue;
+   
+}
+.name {
+    font: 2vw/1.6 'Acme', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-decoration: underline white;
+}
+
+.img {
+    
+    border-radius: 15px;
+}
+
+.temp {
+    font-size: medium;
+}
+
+.pMin {
+    font-size: medium;
+}
+
+.pMax {
+    font-size: medium;
+}
+
+.button {
+    border-radius: 100px;
+    font-size: medium;
+    box-shadow: 5px 0px 20px 10px rgb(150, 142, 142);
+    border: 10px solid white;
+    cursor: pointer;
+    
+}
+
+.button:hover {
+    color: rgb(141, 22, 253);
+    background-color: white;
+    box-shadow: 5px 10px 10px rgb(141, 22, 253);
+}
+
+.button2 {
+    border-radius: 100px;
+    font-size: small;
+    box-shadow: 5px 0px 20px 10px rgb(150, 142, 142);
+    border: 2px 2px dotted white;
+    cursor: pointer;
+    background-color: Transparent;
+    color: white;
+    
+}
+
+.button2:hover {
+    color: rgb(141, 22, 253);
+    background-color: white;
+    box-shadow: 5px 10px 10px rgb(141, 22, 253);
+    
+}
