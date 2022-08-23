@@ -13,6 +13,9 @@ const getDataBase = async () => {
         let genre = v.genres.map(e => e.name)
         let aux = genre.join(', ')
         
+        
+        
+        
       return {
         id: v.id, 
         name: v.name,
@@ -24,6 +27,7 @@ const getDataBase = async () => {
         createdDatabase: v.createdDatabase
       }
       })
+     
       return info
     };
 module.exports = {getDataBase}

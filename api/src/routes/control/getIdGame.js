@@ -1,4 +1,5 @@
 const { getAllGames } = require("../controllers/getAllGames")
+const { Videogame, Genre } = require("../../db")
 require("dotenv").config();
 const {API_KEY} = process.env;
 const axios = require('axios');
@@ -26,7 +27,7 @@ const getIdGame = async (req, res, next) => {
     let game = [{
       id: apiData.id,
       name: apiData.name,
-      description: apiData.description,
+      description: apiData.description_raw,
       image: apiData.background_image,
       released: apiData.released,
       rating: apiData.rating, 
@@ -40,19 +41,35 @@ const getIdGame = async (req, res, next) => {
     
     
    } else {
-      let gameFound = await Videogame.findByPk(id, {  //Utilizo un findByPk para traer desde la DB todas las ID de los videogames
-         include: [{
-             model: Genre,               //Y tambien quiero que me incluya el modelo de Genre y Platform con el atributo name que esta definico en mi modelo
-             attributes: ['name'],
-             through : {
-                 attributes: [],
-             },
-         }]
-     })
-     var arreglo = []
-     arreglo.push(gameFound)
+    //   let gameFound = await Videogame.findByPk(id, {  //Utilizo un findByPk para traer desde la DB todas las ID de los videogames
+    //      include: [{
+    //          model: Genre,               //Y tambien quiero que me incluya el modelo de Genre y Platform con el atributo name que esta definico en mi modelo
+    //          attributes: ['name'],
+    //          through : {
+    //              attributes: [],
+    //          },
+    //      }]
+    //  })
+    //  var arreglo = []
+    //  arreglo.push(gameFound)
 
-     res.status(200).json(arreglo)
+      const game = await Videogame.findOne({
+          where: {id: id}, 
+          include: Genre
+      })
+
+      const videoGame = [{
+        id: game.id,
+        name: game.name,
+         description: game.description,
+         image: game.background_image,
+         released: game.released,
+         rating: game.rating, 
+         genres: game.genres.map( d => d.name),
+         platforms: game.platforms.map( d => d)
+      }]
+
+     res.status(200).json(videoGame)
  
    }
    

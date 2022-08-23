@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from "react-router-dom"
 import s from '../styles/NavBar.module.css'
 
-import { getVideoGames, getByName, filterGenres, getGenres, createdBy, orderByLeter } from '../actions/index'
+import { getVideoGames, getByName, filterGenres, getGenres, createdBy, orderByLeter, orderByRating } from '../actions/index'
 
-export default function NavBar({setCurrentPage, setOrder, name, setName, orderByRating}){
+export default function NavBar({setCurrentPage, setOrder, name, setName}){
 
     const dispatch = useDispatch()
     const generos = useSelector((state) => state.genres)

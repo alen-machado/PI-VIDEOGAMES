@@ -31,7 +31,7 @@ export function postGame(payload){
 export function getPlatforms(payload){
    return async function(dispatch){
     let json = await axios.get('http://localhost:3001/platforms')
-    console.log(json)
+    
     return dispatch({
         type: 'GET_PLATFORMS',
         payload: json.data
@@ -58,6 +58,37 @@ export function filterGenres(payload){
 
 }
 
+export function getDetail(id){
+    return async function (dispatch){
+        
+            let json = await axios.get('http://localhost:3001/videogames/' + id)
+             
+            return dispatch({
+                type: 'GET_DETAIL',
+                payload: json.data
+            })
+
+    }
+}
+
+export function cleanGameId(){
+    return {
+        type: 'CLEAN_GAME_ID'
+    }
+}
+
+export function deleteGame(id){
+    return async function (dispatch){
+        
+        let json = await axios.delete('http://localhost:3001/videogames/' + id)
+         
+        return dispatch({
+            type: 'DELETE_GAME',
+            payload: json.data
+        })
+
+}
+}
 export function createdBy(payload){
     return {
            type: 'CREATED_BY',

@@ -15,7 +15,7 @@ const postGame = async (req, res, next) => {
 
         genres.map( async c => {
             let search = await Genre.findAll(
-                {where: {id : c}}
+                {where: {name : c}}
             )
             if (search) {
                 newVideoGame.addGenre(search)

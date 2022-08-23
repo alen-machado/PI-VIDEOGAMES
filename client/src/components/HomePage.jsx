@@ -53,7 +53,7 @@ export default function HomePage(){
                         </div>
                     )
                   })
-                }
+                }: <p className={s.loading}>Loading...</p>
             </div>
         </div>
     )

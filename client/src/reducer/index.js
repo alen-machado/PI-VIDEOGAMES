@@ -3,6 +3,7 @@ const initialState = {
     allVideoGames: [],
     genres: [],
     platforms: [],
+    detail:[]
 
 }
 
@@ -37,6 +38,22 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 platforms: action.payload
             }   
+        case 'GET_DETAIL':
+            return{
+                ...state,
+                detail: action.payload
+            }
+            
+        case 'CLEAN_GAME_ID':
+            return{
+                ...state,
+                detail: []
+            }  
+        case 'DELETE_GAME':
+            return {
+                ...state,
+                videoGames: state.videoGames.filter( e=> e.id !== action.payload )
+            }      
 
         case 'FILTER_GENRES':
             const copy = state.allVideoGames
@@ -51,7 +68,7 @@ export default function rootReducer(state = initialState, action) {
             const createdby = action.payload === 'created' ? copy1.filter(e => e.createdDatabase) : copy1.filter(e => !e.createdDatabase)
             return {
                 ...state,
-                videoGames: action.payload === 'All' ? state.allVideoGames : createdby
+                videoGames: action.payload === 'All' ? copy1 : createdby
             }   
 
         case 'ORDER_LETER':
@@ -76,13 +93,13 @@ export default function rootReducer(state = initialState, action) {
 
             let sortRating = action.payload === 'ascendente' ?
             state.videoGames.flat(2).sort((a,b) => {
-                if(a.rating > b.rating) return   1
-                if(a.rating < b.rating) return  -1
+                if (a.rating > b.rating){return 1}
+                if (b.rating > a.rating){return -1}
                 return 0
             }) :
             state.videoGames.flat(2).sort((a,b) => {
-                if(a.rating > b.rating) return -1
-                if(a.rating < b.rating) return  1
+                if (a.rating > b.rating){return -1}
+                if (b.rating > a.rating){return 1}
                 return 0
             })
             return{

@@ -15,7 +15,7 @@ const axios = require('axios');
         return arr.flat().map(v => {
             return {
                 id:v.id, 
-                name:v.name,
+                name:v.name.toLowerCase(),
                 released: v.released,
                 rating: v.rating,
                 platforms: v.platforms.map(p => p.platform.name),

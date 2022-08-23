@@ -1,0 +1,33 @@
+.conteiner{
+    color: white;
+    text-align: center;
+    border: 10px solid white;
+    /* margin: 30px 400px 30px 400px; */
+    /* background-color: gainsboro; */
+    border-radius: 15px;
+    /* box-shadow: 10px 10px 10px white; */
+     
+  }
+  .img {
+   border: 10px solid black;
+   border-radius: 15px;
+  }
+  
+  .generos {
+   border: 10px solid white;;
+   border-radius: 15px;
+   box-shadow: 10px 10px 10px 10px rgb(150, 142, 142);
+   /* margin: 5px 100px 5px 100px; */
+  }
+  
+  .actBtn {
+   border-radius: 100px;
+   cursor: pointer;
+  }
+  
+  .title {
+    text-decoration: underline white;
+  }
+  .loading { 
+   color: white;
+  }
