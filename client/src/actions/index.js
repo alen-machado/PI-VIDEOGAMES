@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export function getVideoGames(){
    return async function(dispatch){
-    let json = await axios.get('http://localhost:3001/videogames')
+    let json = await axios.get('/videogames')
     return dispatch({
         type:'GET_VIDEGAMES',
         payload: json.data
@@ -13,7 +13,7 @@ export function getVideoGames(){
 export function getByName(payload){
  return async function (dispatch){
 
-    let json = await axios.get('http://localhost:3001/videogames?name=' + payload)
+    let json = await axios.get('/videogames?name=' + payload)
 
     return dispatch({
         type: 'GET_BY_NAME',
@@ -24,13 +24,13 @@ export function getByName(payload){
 
 export function postGame(payload){
     return async function(dispatch){
-        let json = await axios.post('http://localhost:3001/videogames', payload)
+        let json = await axios.post('/videogames', payload)
         return json
     }
 }
 export function getPlatforms(payload){
    return async function(dispatch){
-    let json = await axios.get('http://localhost:3001/platforms')
+    let json = await axios.get('/platforms')
     
     return dispatch({
         type: 'GET_PLATFORMS',
@@ -41,7 +41,7 @@ export function getPlatforms(payload){
 
 export function getGenres(){
     return async function(dispatch){
-        let json = await axios.get('http://localhost:3001/genres')
+        let json = await axios.get('/genres')
 
         return dispatch({
             type: 'GET_GENRES',
@@ -61,7 +61,7 @@ export function filterGenres(payload){
 export function getDetail(id){
     return async function (dispatch){
         
-            let json = await axios.get('http://localhost:3001/videogames/' + id)
+            let json = await axios.get('/videogames/' + id)
              
             return dispatch({
                 type: 'GET_DETAIL',
@@ -80,7 +80,7 @@ export function cleanGameId(){
 export function deleteGame(id){
     return async function (dispatch){
         
-        let json = await axios.delete('http://localhost:3001/videogames/' + id)
+        let json = await axios.delete('/videogames/' + id)
          
         return dispatch({
             type: 'DELETE_GAME',
