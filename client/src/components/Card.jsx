@@ -18,7 +18,7 @@ export default function Card({id, name, image, genres, rating}){
     return (
         <div key={id} className={s.conteiner}>
 
-              <button className={s.button2} name={id} value={id} onClick={(e) => { handleDelete(e) }}>X</button> 
+              {/* <button className={s.button2} name={id} value={id} onClick={(e) => { handleDelete(e) }}>X</button>  */}
 
             <h3 className={s.name}>{name}</h3>
             <img className={s.img} src={image} alt="img not found" width="350px" height="300px"/>
