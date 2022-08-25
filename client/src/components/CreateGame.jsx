@@ -130,7 +130,7 @@ const dispatch = useDispatch()
           
           } else {
            dispatch(postGame(input))
-           alert('Actividad Creada')
+           alert('Videojuego Creado')
           }
            setInput({
             name:'',
@@ -168,11 +168,17 @@ const dispatch = useDispatch()
        
     return (
         <div>
+           <div className={s.text}>
             <Link to='/home'>
             <button>Volver al Home!</button>
             </Link>
+           </div>
+            
 
-            <h1 className={s.title}>Vamos a crear nuestro VideoJuego!</h1>
+            <div >
+              <h1 className={s.title}>Creemos nuestro VideoJuego!</h1>
+            </div>
+            
             <div className={s.otroDiv}>
 
               <form  className={s.conteiner} onSubmit={e => handleSubmit(e)}>

@@ -24,7 +24,7 @@ export default function CardDetail(){
     return (
         <div  key={id}>
 
-            <div>
+            <div className={s.text}>
 
             <Link to='/create'>
             <button>Crear Actividad</button>
@@ -42,18 +42,16 @@ export default function CardDetail(){
             {
                 game.length > 0 ?
                 <div className={s.conteiner}>
+                  
                     <h1 className={s.title}>{game[0].name.toLowerCase()}</h1>
-                    <img className={s.img} src={game[0].image? game[0].image : "https://cdn.dribbble.com/users/458522/screenshots/5864883/media/4ee7891e185fdc7723f31a9a0287e492.jpg?compress=1&resize=400x300&vertical=top"} alt="img not found" width="350px" height="300px"/>
-                    <h3 >Fecha de Lanzamiento: {game[0].released} </h3>
-                    <h3 >Rating: {game[0].rating} </h3>
-                    <h3 >Plataformas Disponibles: {game[0].platforms.join(', ')} </h3>
-                    <h3 >Descripcion: {game[0].description} </h3>
-                     <h3> Generos: {game[0].genres.join(', ')}</h3> 
-{/* 
-                    <div className={s.generos}>
-                    </div>     */}
-                    
-                </div> : <p className={s.loading} >Loading...</p>
+                    <img className={s.img} src={game[0].image? game[0].image : "https://cdn.dribbble.com/users/458522/screenshots/5864883/media/4ee7891e185fdc7723f31a9a0287e492.jpg?compress=1&resize=400x300&vertical=top"} alt="img not found" width="450px" height="400px"/>
+                    <h3 >FECHA DE LANZAMIENTO:   {game[0].released} </h3>
+                    <h3 >RATING:   {game[0].rating} </h3>
+                    <h3 >PLATAFORMAS DISPONIBLES: {game[0].platforms.join(', ')} </h3>
+                    <h3 >DESCRIPCION: {game[0].description} </h3>
+                     <h3> GENEROS: {game[0].genres.join(', ')}</h3> 
+    
+                </div> : <div className={s.loading} >Loading...</div>
             }
            </div>
         </div>

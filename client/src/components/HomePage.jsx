@@ -29,7 +29,7 @@ export default function HomePage(){
   const [name, setName] = useState("")
 
     return (
-        <div className={s.container2}>
+        <div >
              <NavBar 
              setCurrentPage={setCurrentPage} 
              setOrder={setOrder}
@@ -43,17 +43,17 @@ export default function HomePage(){
             setCurrentPage={setCurrentPage}
             /> 
               
-            <div>
+            <div className={s.container2}>
                 {
-                  currentGames?.map(v => {
+                  currentGames.length ? currentGames.map(v => {
                     
                     return(
                         <div key={v.id} >
-                        <Card id={v.id} name={v.name} genres={v.genres || v.genres.map(e => e.name)} rating={v.rating} image={v.image? v.image : 'https://cdn.dribbble.com/users/458522/screenshots/5864883/media/4ee7891e185fdc7723f31a9a0287e492.jpg?compress=1&resize=400x300&vertical=top'} />
+                        <Card id={v.id} name={v.name} description={v.description} genres={v.genres || v.genres.map(e => e.name)} rating={v.rating} image={v.image? v.image : 'https://cdn.dribbble.com/users/458522/screenshots/5864883/media/4ee7891e185fdc7723f31a9a0287e492.jpg?compress=1&resize=400x300&vertical=top'} />
                         </div>
                     )
-                  })
-                }: <p className={s.loading}>Loading...</p>
+                  }): <div className={s.loading}>Loading...</div>
+                }
             </div>
         </div>
     )

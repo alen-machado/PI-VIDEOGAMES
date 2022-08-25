@@ -2,12 +2,26 @@
     text-align: center;
     color: white;
     margin-top: 20%;
+    
 }
 
+.title{
+    background-color: gainsboro;
+    height: 110%;
+    width: 80% ;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 12px;
+}
 .botton {
     width: 120px;
     height: 100px;
-    background-color: rgb(159, 98, 216);
+    background-color: grey;
     color: white;
     border: 5px solid white;
     border-radius: 10px;
@@ -17,7 +31,7 @@
 }
 
 .botton:hover {
-    color: rgb(141, 22, 253);
+    color: black;
     background-color: white;
-    box-shadow: 5px 10px 10px rgb(141, 22, 253);
+    box-shadow: black;
 }

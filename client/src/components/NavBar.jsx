@@ -67,7 +67,7 @@ export default function NavBar({setCurrentPage, setOrder, name, setName}){
                 <h1>Catalogo de Juegos</h1>
           </div>
 
-          <div>
+          <div className={s.text}>
 
             <Link to='/create'>
             <button>Crear VideoJuego</button>
@@ -80,7 +80,7 @@ export default function NavBar({setCurrentPage, setOrder, name, setName}){
              <button onClick={e => {handleClick(e)}}>Volver a cargar</button> 
 
           </div>
-
+          
           <div className={s.text}>
             <input type='text'
             value={name}

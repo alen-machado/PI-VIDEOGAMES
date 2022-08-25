@@ -1,33 +1,47 @@
 .conteiner{
-    color: white;
-    text-align: center;
-    border: 10px solid white;
-    /* margin: 30px 400px 30px 400px; */
-    /* background-color: gainsboro; */
-    border-radius: 15px;
-    /* box-shadow: 10px 10px 10px white; */
-     
-  }
+  background: rgba(0, 0, 0, 0.76);
+  
+  
+  text-align: center;
+  margin: 250px;
+  margin-top: 10px;
+  color: aliceblue;
+  padding: 5px;
+}
   .img {
-   border: 10px solid black;
+   border: 5px solid aliceblue;
    border-radius: 15px;
   }
   
-  .generos {
-   border: 10px solid white;;
-   border-radius: 15px;
-   box-shadow: 10px 10px 10px 10px rgb(150, 142, 142);
-   /* margin: 5px 100px 5px 100px; */
-  }
-  
-  .actBtn {
-   border-radius: 100px;
-   cursor: pointer;
-  }
+ 
   
   .title {
     text-decoration: underline white;
   }
-  .loading { 
-   color: white;
+  
+ .text {
+    background-color: gainsboro;
+    height: 110%;
+    width: 80% ;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 12px;
+    
+    
   }
+  .loading {
+    text-align: center;
+    color: aliceblue;
+    justify-content: center;
+    font-size: 50px;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    border-radius: 12px;
+    
+   
+}
