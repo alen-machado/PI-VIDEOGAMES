@@ -27,7 +27,7 @@ export default function CardDetail(){
             <div className={s.text}>
 
             <Link to='/create'>
-            <button>Crear Actividad</button>
+            <button>Crear VideoJuego</button>
             </Link>
 
             <Link to={'/home'}>
