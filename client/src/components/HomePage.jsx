@@ -49,7 +49,7 @@ export default function HomePage(){
                     
                     return(
                         <div key={v.id} >
-                        <Card id={v.id} name={v.name} description={v.description} genres={v.genres || v.genres.map(e => e.name)} rating={v.rating} image={v.image} />
+                        <Card id={v.id} name={v.name} description={v.description} genres={v.genres || v.genres.map(e => e.name)} rating={v.rating} image={v.image? v.image : 'https://cdn.dribbble.com/users/458522/screenshots/5864883/media/4ee7891e185fdc7723f31a9a0287e492.jpg?compress=1&resize=400x300&vertical=top'} />
                         </div>
                     )
                   }): <div className={s.loading}>Loading...</div>
