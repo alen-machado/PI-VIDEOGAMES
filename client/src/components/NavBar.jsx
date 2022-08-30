@@ -10,10 +10,12 @@ export default function NavBar({setCurrentPage, setOrder, name, setName}){
 
     const dispatch = useDispatch()
     const generos = useSelector((state) => state.genres)
+    
 
     useEffect(() => {
         dispatch(getVideoGames())  
         dispatch(getGenres())
+       
       }, [dispatch] )
 
     function handleClick(e){
@@ -57,8 +59,7 @@ export default function NavBar({setCurrentPage, setOrder, name, setName}){
         dispatch(orderByRating(e.target.value))
         setCurrentPage(1)
         setOrder(e.target.value)
-      }
-    
+    }
 
     return (
     <div>
@@ -134,7 +135,7 @@ export default function NavBar({setCurrentPage, setOrder, name, setName}){
             </select>
         </div>
 
-
+        
     </div>
     )
 }

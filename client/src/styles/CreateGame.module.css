@@ -1,7 +1,7 @@
 .conteiner{
     background: rgba(0,0,0,0.5);
-    margin: 5px;
-    padding: 10px;
+    margin-left: 30%;
+    padding: 100px;
     width: 500px;
     height: 500px;
     border-radius: 12px;
@@ -10,13 +10,11 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
+    padding-bottom: 150px;
+    
    
 }
-.otroDiv {
-    text-align: center;
-    color: white;
-    margin-left: 550px;
-}
+
 .title {
     font: bold 7.5vw/1.6 "Acme", sans-serif;
     color: white;
@@ -27,6 +25,9 @@
     margin: auto;
     background: rgba(0,0,0,0.5);
     border-radius: 12px;
+    padding-left: 30px;
+    margin-top: 2%;
+    margin-bottom: 2%;
   }
 
   .text {
@@ -45,6 +46,44 @@
     
   }
 .select {
-    border: 3px solid rgb(49, 58, 105);
-    border-radius: 50px;
+  background: silver;
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: #393939;
+  font-size: 12px;
+  padding: 5px;
+}
+.select:hover {
+  cursor: pointer;
+}
+.input {
+  background: silver;
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: #393939;
+  font-size: 15px;
+  padding: 10px;
+
+}
+
+.button {
+  border-radius: 100px;
+  font-size: medium;
+  box-shadow: 5px 0px 20px 10px rgb(150, 142, 142);
+  border: 10px solid white;
+  cursor: pointer;
+  
+}
+
+.button:hover {
+  color: black;
+  background-color: white;
+  box-shadow: black;
+}
+
+.errors {
+  color: aliceblue;
+}
+.lista {
+  color: aliceblue;
 }

@@ -9,8 +9,6 @@ const getPlatforms = async (req, res, next) => {
 
     platforms = games.map(e => e.platforms)
     platforms = platforms.flat()
-    // platforms = platforms.join(", ").split(", ")
-    // platforms = platforms.filter((el) => el)
      platforms = [...new Set(platforms)].sort()
     res.send(platforms)
  } catch (error) {

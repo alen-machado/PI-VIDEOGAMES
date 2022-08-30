@@ -44,7 +44,7 @@ export default function CardDetail(){
                 <div className={s.conteiner}>
                   
                     <h1 className={s.title}>{game[0].name.toLowerCase()}</h1>
-                    <img className={s.img} src={game[0].image ? game[0].image : "https://cdn.dribbble.com/users/458522/screenshots/5864883/media/4ee7891e185fdc7723f31a9a0287e492.jpg?compress=1&resize=400x300&vertical=top"} alt="img not found" width="450px" height="400px"/>
+                    <img className={s.img} src={game[0].image } alt="img not found" width="450px" height="400px"/>
                     <h3 >FECHA DE LANZAMIENTO:   {game[0].released} </h3>
                     <h3 >RATING:   {game[0].rating} </h3>
                     <h3 >PLATAFORMAS DISPONIBLES: {game[0].platforms.join(', ')} </h3>

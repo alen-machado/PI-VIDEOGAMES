@@ -11,9 +11,12 @@ export default function Paginado({ gamesPerPage, videoGames, setCurrentPage }){
     for (let i = 1; i <= Math.ceil(videoGames/gamesPerPage); i++){
        pageNumbers.push(i)
     }
+
+   
     return (
         <nav className={s.nav}>
     <ul className={s.paginado}>
+
         { 
         pageNumbers && pageNumbers.map(number => {
            return (

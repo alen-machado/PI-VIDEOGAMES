@@ -39,16 +39,16 @@ export function getPlatforms(payload){
    }
 }
 
-export function getGenres(){
-    return async function(dispatch){
-        let json = await axios.get('/genres')
+ export function getGenres(){
+     return async function(dispatch){
+         let json = await axios.get('/genres')
 
-        return dispatch({
-            type: 'GET_GENRES',
-            payload: json.data
-        })
-    }
-}
+         return dispatch({
+             type: 'GET_GENRES',
+             payload: json.data
+         })
+     }
+ }
 
 export function filterGenres(payload){
     return {

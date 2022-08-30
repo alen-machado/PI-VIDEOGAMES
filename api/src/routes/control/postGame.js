@@ -1,4 +1,4 @@
-const { Videogame, Genre, Platform } = require("../../db")
+const { Videogame, Genre } = require("../../db")
 
 const postGame = async (req, res, next) => {
      const {name, description, rating, released, image, genres, platforms} = req.body

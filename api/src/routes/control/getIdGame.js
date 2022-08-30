@@ -1,4 +1,3 @@
-const { getAllGames } = require("../controllers/getAllGames")
 const { Videogame, Genre } = require("../../db")
 require("dotenv").config();
 const {API_KEY} = process.env;
@@ -8,13 +7,6 @@ const getIdGame = async (req, res, next) => {
  try {
     const { id } = req.params
 
-   //  const games = await getAllGames()
-   //  const gameId = games.filter(r => r.id === id)
-   //  if(gameId.length) {
-   //     res.json(gameId)
-   //  } else {
-   //      res.json('id invalido')
-   //  }
    if(!id.includes('-')){
 
       const apiUrl = await axios.get(
@@ -35,23 +27,13 @@ const getIdGame = async (req, res, next) => {
       platforms: apiData.platforms.map( d => d.platform.name)
   }]
              
-  game.length ?            //Si encuentra los resultados que pedi que me los devuelva y en caso de que no, una alerta
+  game.length ?            
   res.status(200).json(game) :
   res.status(404).send('juego por ID no encontrado')
     
     
    } else {
-    //   let gameFound = await Videogame.findByPk(id, {  //Utilizo un findByPk para traer desde la DB todas las ID de los videogames
-    //      include: [{
-    //          model: Genre,               //Y tambien quiero que me incluya el modelo de Genre y Platform con el atributo name que esta definico en mi modelo
-    //          attributes: ['name'],
-    //          through : {
-    //              attributes: [],
-    //          },
-    //      }]
-    //  })
-    //  var arreglo = []
-    //  arreglo.push(gameFound)
+    
 
       const game = await Videogame.findOne({
           where: {id: id}, 
@@ -62,7 +44,7 @@ const getIdGame = async (req, res, next) => {
         id: game.id,
         name: game.name,
          description: game.description,
-         image: game.background_image,
+         image: game.image,
          released: game.released,
          rating: game.rating, 
          genres: game.genres.map( d => d.name),

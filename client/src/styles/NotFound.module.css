@@ -15,5 +15,10 @@
   }
 
 .title {
-    color:white
+    color:white;
+    background: rgba(0,0,0,0.5);
+    padding-left: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 10px;
   }

@@ -1,4 +1,4 @@
-const { Videogame, Genre } = require("../../db")
+const { Genre } = require("../../db")
 require("dotenv").config();
 const {API_KEY} = process.env;
 const axios = require('axios');
@@ -11,14 +11,14 @@ try {
     if(!genresDb.length) {
         const genres = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`)
 
-        const genresMap = genres.data.results?.map((genre) => {  //Mapeo los generos que me llegan como results, para obtener un nuevo arreglo con los names de los generos que quiero
+        const genresMap = genres.data.results?.map((genre) => { 
             return {
                 
              name: genre.name
            };
          });  
          
-         const addGenres = await Genre.bulkCreate(genresMap); //Paso el mapeo que hice a mi modelo Genre y lo devuelvo
+         const addGenres = await Genre.bulkCreate(genresMap);
          return res.status(200).send(addGenres); 
     } else {
         res.status(200).send(genresDb)

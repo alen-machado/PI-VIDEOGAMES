@@ -179,43 +179,43 @@ const dispatch = useDispatch()
               <h1 className={s.title}>Creemos nuestro VideoJuego!</h1>
             </div>
             
-            <div className={s.otroDiv}>
+           
 
               <form  className={s.conteiner} onSubmit={e => handleSubmit(e)}>
       {/* -------------------------   NAME       */}
               <div>
-                  <input type='text' name="name" value={input.name} autoComplete="off" placeholder="Nombre del VideoJuego..." onChange={e => {handleChange(e)}}/>
+                  <input className={s.input} type='text' name="name" value={input.name} autoComplete="off" placeholder="Nombre del VideoJuego..." onChange={e => {handleChange(e)}}/>
                     {errors.name && (
-                  <p className='error' >{errors.name}</p>
+                  <p className={s.errors} >{errors.name}</p>
                   )} 
              </div>
       {/* -------------------------   DESCRIPTION        */}
-             <div>
-                <input type='text' name="description" value={input.description} autoComplete="off" placeholder="Descripcion del VideoJuego..." onChange={e => {handleChange(e)}}></input>
+             <div >
+                <input className={s.input} type='text' name="description" value={input.description} autoComplete="off" placeholder="Descripcion del VideoJuego..." onChange={e => {handleChange(e)}}></input>
                  {errors.description && (
-                  <p className='error' >{errors.description}</p>
+                  <p className={s.errors} >{errors.description}</p>
                 )} 
              </div>
      {/* -------------------------   RATING        */}
-             <div>
-                <input type='number' name="rating" value={input.rating} autoComplete="off" placeholder="Rating del VideoJuego..." onChange={e => {handleChange(e)}}></input>
+             <div >
+                <input className={s.input} type='number' name="rating" value={input.rating} autoComplete="off" placeholder="Rating del VideoJuego..." onChange={e => {handleChange(e)}}></input>
                  {errors.rating && (
-                  <p className='error' >{errors.rating}</p>
+                  <p className={s.errors} >{errors.rating}</p>
                 )} 
              </div>
 {/* -------------------------   RELEASED       */}
-             <div>
-                <input type='date' name="released" value={input.released} autoComplete="off" placeholder="Fecha de Lanzamiento..." onChange={e => {handleChange(e)}}></input>
+             <div >
+                <input className={s.input} type='date' name="released" value={input.released} autoComplete="off" placeholder="Fecha de Lanzamiento..." onChange={e => {handleChange(e)}}></input>
                  {errors.released && (
-                  <p className='error' >{errors.released}</p>
+                  <p className={s.errors} >{errors.released}</p>
                 )} 
              </div>
 
   {/* -------------------------   IMAGEN      */}
-             <div>
-                <input type='text' name="image" value={input.image} autoComplete="off" placeholder="URL de imagen..." onChange={e => {handleChange(e)}}></input>
+             <div >
+                <input className={s.input} type='text' name="image" value={input.image} autoComplete="off" placeholder="URL de imagen..." onChange={e => {handleChange(e)}}></input>
                  {errors.image && (
-                  <p className='error' >{errors.image}</p>
+                  <p className={s.errors} >{errors.image}</p>
                 )} 
              </div>
 {/* -------------------------   PLATAFORMAS       */}
@@ -236,7 +236,7 @@ const dispatch = useDispatch()
                             let name = plataformas?.map((e) =>  e === el? e : null  )
                             return(
                                 <div key={el}>
-                                    <span className="lista">{name}</span>
+                                    <span className={s.lista}>{name}</span>
                                      <button name={el} className="closeButton" onClick={(e) => { removePlatform(e) }}>❌</button> 
                                 </div>
                             )
@@ -261,7 +261,7 @@ const dispatch = useDispatch()
                             
                             return(
                                 <div key={el}>
-                                    <span className="lista">{name1}</span>
+                                    <span className={s.lista}>{name1}</span>
                                      <button name={el} className="closeButton" onClick={(e) => { removeGenre(e) }}>❌</button>  
                                 </div>
                             )
@@ -270,11 +270,10 @@ const dispatch = useDispatch()
                 </ul>
            </div>
 {/* -------------------------   BOTON     */}
-             <button type='submit' onClick={e => handleSubmit(e)} >Crear VideoJuego</button>
+             <button className={s.button} type='submit' onClick={e => handleSubmit(e)} >Crear VideoJuego</button>
           
           </form>  
         </div>
 
-        </div>
     )
 }
