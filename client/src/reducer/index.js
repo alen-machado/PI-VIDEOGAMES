@@ -63,7 +63,8 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                videoGames: result 
             }  
-            
+         
+       
         case 'CREATED_BY':
             const copy1 = state.allVideoGames
             const createdby = action.payload === 'created' ? copy1.filter(e => e.createdDatabase) : copy1.filter(e => !e.createdDatabase)
@@ -74,10 +75,10 @@ export default function rootReducer(state = initialState, action) {
 
         case 'ORDER_LETER':
             let sortName = action.payload === 'ascendente' ? 
-            state.videoGames.sort(function (a, b){ //compara 2 valores,, en este caso el name
+            state.videoGames.sort(function (a, b){ 
                 if (a.name > b.name){return 1}
                 if (b.name > a.name){return -1}
-                return 0; //si son iguales los deja como esta
+                return 0; 
             }) :
                 state.videoGames.sort(function(a, b){
                 if (a.name > b.name){return -1}

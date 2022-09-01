@@ -15,7 +15,6 @@ export default function NavBar({setCurrentPage, setOrder, name, setName}){
     useEffect(() => {
         dispatch(getVideoGames())  
         dispatch(getGenres())
-       
       }, [dispatch] )
 
     function handleClick(e){
@@ -96,7 +95,7 @@ export default function NavBar({setCurrentPage, setOrder, name, setName}){
         </div>
 
         <div className={s.text}>
-        <label>Ordenado por su Genero:</label>
+        <label>Filtro por su Genero:</label>
         <select onChange={e => { handleFilterGenre(e)}}>
         <option value='All'>Todos</option>
         {
@@ -109,14 +108,14 @@ export default function NavBar({setCurrentPage, setOrder, name, setName}){
         </div>
 
         <div className={s.text}>
-            <label>Ordenado por su Creacion:</label>
+            <label>Filtro por su Creacion:</label>
             <select onClick={e => { handleCreatedBy(e)}} >
             <option value='All'>Todos</option>
             <option value='created'>Creados</option>
             <option value='api'>Existentes</option>
             </select>
         </div>
-
+       
         <div className={s.text}>
             <label>Ordenado Alfabetico:</label>
             <select onChange={e => {handleOrderLeter(e)}} > 
@@ -134,8 +133,7 @@ export default function NavBar({setCurrentPage, setOrder, name, setName}){
             <option value='descendente'>Descendente</option>
             </select>
         </div>
-
-        
+   
     </div>
     )
 }

@@ -55,7 +55,6 @@ export function filterGenres(payload){
         type: 'FILTER_GENRES',
         payload
     }
-
 }
 
 export function getDetail(id){
